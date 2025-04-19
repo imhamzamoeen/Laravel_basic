@@ -5,16 +5,20 @@
     </head>
 
     <body>
+        <a href="http://cookie.test/read-cookies">cookie.test</a>
+        <a href="http://child.cookie.test/read-cookies">cookie.test</a>
+
         <div class="row">
             <div class="col-md-12">
                 @php
-                    $GLOBALS['x']=2;
-                    $GLOBALS['y']=3;
-                    function add(){
-                        $GLOBALS['z']=$GLOBALS['x']+$GLOBALS['y'];
+                    $GLOBALS['x'] = 2;
+                    $GLOBALS['y'] = 3;
+                    function add()
+                    {
+                        $GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
                     }
                     add();
-                    echo  $GLOBALS['z'];
+                    echo $GLOBALS['z'];
                 @endphp
 
             </div>

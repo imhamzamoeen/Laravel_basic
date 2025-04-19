@@ -16,8 +16,8 @@ class checktestmiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        Session::push('test-value','presnt');
-    
+        Session::push('test-value', 'presnt');
+
         $value = $request->session()->get('test-value');
         dump($value);
         return $next($request);
