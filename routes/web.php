@@ -20,6 +20,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('retry_function', function () {
+
+
+        $result =  retry(5, function () {
+            // Attempt 5 times while resting 100ms between attempts...
+            // this will log attempting 5 times
+            // each time it throw an exception but goes to catch after 5 times as result get exception after 5 tries
+            dump('attempting');
+            throw new \Exception('test');
+        }, 100);
+        dd($result);
+
+});
 
 
 Route::get(
